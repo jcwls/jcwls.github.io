@@ -22,7 +22,7 @@
             tickTime: d3.time.hours,
             tickInterval: 1,
             tickSize: 30});
-        var svg = d3.select("#sqs-block-content").append("svg").attr("width", width)
+        var svg = d3.select(".sqs-block-content").append("svg").attr("width", width)
           .datum(testData).call(chart);
       }
       
