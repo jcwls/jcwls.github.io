@@ -17,11 +17,6 @@
       var width = 500;
       function timelineRect() {
         var chart = d3.timeline()
-        	.tickFormat(
-        	 {format: d3.time.format("%I %p"),
-            tickTime: d3.time.hours,
-            tickInterval: 1,
-            tickSize: 30});
         var svg = d3.select(".sqs-block-content").append("svg").attr("width", width)
           .datum(testData).call(chart);
       }
