@@ -1,7 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://josh-cowls-rzwd.squarespace.com/s/d3-timeline.js"></script>
+<script type="text/javascript">
+    window.onload = function() {
+      var testData = [
+        {times: [{"starting_time": 1355752800000, "ending_time": 1355759900000}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
+        {times: [{"starting_time": 1355759910000, "ending_time": 1355761900000}, ]},
+        {times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
+      ];
+    
+      var width = 500;
+      function timelineRect() {
+        var chart = d3.timeline();
+        var svg = d3.select("#sqs-block-content").append("svg").attr("width", width)
+          .datum(testData).call(chart);
+      }
+      
+      
+      timelineRect();
+      
+    }
+  </script>
+
+
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  
+    <h3>A simple timeline</h3>
+    <div id="sqs-block-content"></div>
+  </div>
+
 </body>
 </html>
