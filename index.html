@@ -5,6 +5,15 @@
 <script src="../resources/d3.js"></script>
 <script src="../resources/d3-timeline.js"></script>
   <script src="../resources/jquery-latest.min.js"></script>
+
+
+
+</head>
+<body>
+  
+    <h3>A simple timeline</h3>
+    <div id="sqs-block-content"></div>
+  </div>
 <script type="text/javascript">
     window.onload = function() {
 
@@ -17,7 +26,7 @@
       var width = 500;
       function timelineRect() {
         var chart = d3.timeline()
-        var svg = d3.select(".sqs-block-content").append("svg").attr("width", width)
+        var svg = d3.select("#sqs-block-content").append("svg").attr("width", width)
           .datum(testData).call(chart);
       }
       
@@ -26,14 +35,5 @@
       
     
   </script>
-
-
-</head>
-<body>
-  
-    <h3>A simple timeline</h3>
-    <div id="sqs-block-content"></div>
-  </div>
-
 </body>
 </html>
