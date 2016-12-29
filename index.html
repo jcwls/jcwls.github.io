@@ -2,22 +2,53 @@
 //github index updated again AGAIN no head
 <html>
 <head>
+<style type="text/css">
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: black;
+      shape-rendering: crispEdges;
+    }
+    .axis text {
+      font-family: sans-serif;
+      font-size: 10px;
+    }
+    .timeline-label {
+      font-family: sans-serif;
+      font-size: 12px;
+    }
+    #timeline2 .axis {
+      transform: translate(0px,40px);
+      -ms-transform: translate(0px,40px); /* IE 9 */
+      -webkit-transform: translate(0px,40px); /* Safari and Chrome */
+      -o-transform: translate(0px,40px); /* Opera */
+      -moz-transform: translate(0px,40px); /* Firefox */
+    }
+    
+    .coloredDiv {
+      height:20px; width:20px; float:left;
+    }
+  </style>
 </head>
 <body>
- <script src="../resources/d3.v3.min.js" ></script>
-<script src="../resources/d3-timeline.js"></script>
-  <script src="../resources/jquery-latest.min.js"></script>
-<script type="text/javascript">
+	<script src="../resources/d3.v3.min.js" ></script>
+	<script src="../resources/d3-timeline.js"></script>
+  	<script src="../resources/jquery-latest.min.js"></script>
+<<script type="text/javascript">
     window.onload = function() {
       var testData = [
-        {times: [{"starting_time": 1355752800000, "ending_time": 1355759900000}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
+        {times: [{"starting_time": 1136125454000, "ending_time": 1483280654000}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
         {times: [{"starting_time": 1355759910000, "ending_time": 1355761900000}, ]},
         {times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
       ];
     
-      var width = 500;
+      var width = 1200;
       function timelineRect() {
-        var chart = d3.timeline();
+        var chart = d3.timeline().stack().tickFormat(
+        	{format: d3.time.format("%Y"),
+        	tickTime: d3.time.years,
+        	tickInterval:1,
+        	tickSize:6});
         var svg = d3.select("#sqs-block-content").append("svg").attr("width", width)
           .datum(testData).call(chart);
       }
