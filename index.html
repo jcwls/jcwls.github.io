@@ -21,6 +21,7 @@
       font-family: sans-serif;
       font-size: 13px;
       fill: white;
+      }
     #timeline2 .axis {
       transform: translate(0px,40px);
       -ms-transform: translate(0px,40px); /* IE 9 */
@@ -41,14 +42,21 @@
 <script type="text/javascript">
     window.onload = function() {
       var testData = [
-        {label: "Study", times: [{"label":"Ashcombe School 6th Form", "text-color": "white", "starting_time": 1157117054000, "ending_time": 1214918654000}, {"label":"BA, Exeter", "starting_time": 1220275454000, "ending_time": 1306934654000}, {"label":"M.Sc., Oxford", "starting_time": 1346505854000, "ending_time": 1375363454000},{"label":"S.M., MIT", "starting_time": 1441113854000, "ending_time": 1496323454000} ]}, 
-        {times: [{"starting_time": 1243252593000, "display": "circle"}, ]},
+        {summary: "Education summary \n Ashcombe", label: "Study", times: [{"description":"test description", "label":"Ashcombe School Sixth Form", "starting_time": 1157117054000, "ending_time": 1214918654000}, {"description": "exeter", "label":"BA, Exeter", "starting_time": 1220275454000, "ending_time": 1306934654000}, {"label":"M.Sc., Oxford", "starting_time": 1346505854000, "ending_time": 1375363454000},{"label":"S.M., MIT", "starting_time": 1441113854000, "ending_time": 1496323454000} ]}, 
+        {summary: "Employment summary", label: "Employment", times: [{"description":"second desc","starting_time": 1243252593000, "display": "circle"}, ]},
         {times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
       ];
     
       var width = 1200;
       function timelineRect() {
-        var chart = d3.timeline().stack().labelMargin(25).margin({left: 75, right: 0, top: 20, bottom: 0}).tickFormat(
+        var chart = d3.timeline().stack().labelMargin(25).margin({left: 75, right: 0, top: 20, bottom: 0}).hover(function (d, i, datum) {
+        	var div = $('#hoverRes');
+        	var colors = chart.colors();
+        	div.find('.coloredDiv').css('background-color', colors(i))
+        	div.find('#name').text(datum["summary"]).css('font-family', 'sans-serif');
+        	})
+        	
+        	.itemHeight(30).tickFormat(
         	{format: d3.time.format("%Y"),
         	tickTime: d3.time.years,
         	tickInterval:1,
