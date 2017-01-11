@@ -44,12 +44,12 @@
       var testData = [
         {summary: "Education summary \n Ashcombe", label: "Study", times: [{"description":"test description", "label":"Ashcombe School Sixth Form", "starting_time": 1157117054000, "ending_time": 1214918654000}, {"description": "exeter", "label":"BA, Exeter", "starting_time": 1220275454000, "ending_time": 1306934654000}, {"label":"M.Sc., Oxford", "starting_time": 1346505854000, "ending_time": 1375363454000},{"label":"S.M., MIT", "starting_time": 1441113854000, "ending_time": 1496323454000} ]}, 
         {summary: "Employment summary", label: "Employment", times: [{"description":"second desc","starting_time": 1243252593000, "display": "circle"}, ]},
-        {label: "Causes and campaigns", times: [{"label":"Mapping Change", "starting_time":1151791263000, "ending_time":1193958063000}, {"label":"Lib Dem Policy Unit", "starting_time":1309557663000, "ending_time":1320188463000}]}
+        {label: "Causes & campaigns", times: [{"label":"Mapping Change", "starting_time":1151791263000, "ending_time":1193958063000}, {"label":"Lib Dem Policy Unit", "starting_time":1309557663000, "ending_time":1320188463000}]}
       ];
     
       var width = 1200;
       function timelineRect() {
-        var chart = d3.timeline().stack().labelMargin(25).margin({left: 75, right: 0, top: 20, bottom: 0}).hover(function (d, i, datum) {
+        var chart = d3.timeline().stack().labelMargin(25).margin({left: 150, right: 0, top: 20, bottom: 0}).hover(function (d, i, datum) {
         	var div = $('#hoverRes');
         	var colors = chart.colors();
         	div.find('.coloredDiv').css('background-color', colors(i))
