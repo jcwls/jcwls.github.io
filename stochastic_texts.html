@@ -94,8 +94,7 @@ function litany() {
         main.removeChild(document.getElementById('main').firstChild);
     }
     last = document.createElement('div');
-    text = phrase() + choose(predicates) + choose(conjunctions);
-    text = text + phrase() + choose(predicates) + '.';
+    text = phrase() ;
     last.innerHTML = text;
     main.appendChild(last);
 }
