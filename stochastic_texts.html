@@ -71,6 +71,11 @@ collective_subjects = ['LYING MEDIA', 'CROOKED MEDIA', 'LOSER Democrats', 'DUMB-
 future_verbs = ['will never change!', 'are all the same!', 'are all corrupt!', 'will always lose!', 'are very dishonest!', 'are all hypocrites!'],
 exhortations = ['Sad!', 'Too bad!', 'Shame!', 'Very dishonest!', 'Very nice!', 'We need change, Make America Great Again!', 'Such a mess!', 'Disgrace!', 'So biased!', 'Broken System!'];
 
+function rand_range(maximum) {
+    "use strict";
+    return Math.floor(Math.random() * (maximum + 1));
+}
+
 function choose(array) {
     "use strict";
     return array[rand_range(array.length - 1)];
