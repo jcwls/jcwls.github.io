@@ -36,11 +36,18 @@
     {id: 6, content: 'item 6', start: '2014-04-27', type: 'point'}
   ]);
 
+ // create a data set with groups
+  var names = ['John', 'Alston', 'Lee', 'Grant'];
+  var groups = new vis.DataSet();
+  for (var g = 0; g < groupCount; g++) {
+    groups.add({id: g, content: names[g]});
+  }
+  
   // Configuration for the Timeline
   var options = {};
 
   // Create a Timeline
-  var timeline = new vis.Timeline(container, items, options);
+  var timeline = new vis.Timeline(container, items, groups, options);
 </script>
 </body>
 </html>
