@@ -49,7 +49,10 @@
   var options = {};
 
   // Create a Timeline
-  var timeline = new vis.Timeline(container, items, groups, options);
+  var timeline = new vis.Timeline(container);
+  timeline.setGroups(groups);
+  timeline.setItems(items)
+  timeline.setOptions(options);
 </script>
 </body>
 </html>
