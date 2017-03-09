@@ -121,10 +121,6 @@
     	return a.value - b.value;
     	},
   };
-  // Timeline object
-  var timelineTooltips = new vis.Timeline(document.getElementById('tooltips'),
-      myitems, options
-  );
   var timeline = new vis.Timeline(container);
   timeline.setOptions(options);
   timeline.setGroups(mygroups);
