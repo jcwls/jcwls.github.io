@@ -25,7 +25,7 @@
   
 </head>
 <body>
-
+<div id="tooltips"></div>
 <p>
   This example demonstrate using groups. Note that a DataSet is used for both
   items and groups, allowing to dynamically add, update or remove both items
@@ -123,7 +123,7 @@
   };
   // Timeline object
   var timelineTooltips = new vis.Timeline(document.getElementById('tooltips'),
-      
+      myitems, options
   );
   var timeline = new vis.Timeline(container);
   timeline.setOptions(options);
