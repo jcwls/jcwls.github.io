@@ -31,7 +31,7 @@
   items and groups, allowing to dynamically add, update or remove both items
   and groups via the DataSet.
 </p>
-<div id="visualization"></div>
+
 
 <script>
   var now = moment().minutes(0).seconds(0).milliseconds(0);
@@ -125,7 +125,10 @@
   var timelineTooltips = new vis.Timeline(document.getElementById('tooltips'),
       myitems, options
   );
-  
+  var timeline = new vis.Timeline(container);
+  timeline.setOptions(options);
+  timeline.setGroups(mygroups);
+  timeline.setItems(myitems);
 
 </script>
 </body>
