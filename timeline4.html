@@ -115,7 +115,9 @@
   // create visualization
   var container = document.getElementById('visualization');
   var options = {
-    groupOrder: 'content'  // groupOrder can be a property name or a sorting function
+    groupOrder: function (a, b){
+    	return a.value - b.value;
+    	},
   };
 
   var timeline = new vis.Timeline(container);
