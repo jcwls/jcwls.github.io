@@ -25,6 +25,7 @@
   
 </head>
 <body>
+<div id="tooltips"></div>
 <p>
   This example demonstrate using groups. Note that a DataSet is used for both
   items and groups, allowing to dynamically add, update or remove both items
@@ -96,7 +97,8 @@
   group: 1,
   content: 'University of Exeter',
   start: '2008-09-01',
-  end: '2011-07-01'},
+  end: '2011-07-01',
+  title: 'Hello world'},
   {id: 2,
   group: 1,
   content: 'University of Oxford',
@@ -119,7 +121,10 @@
     	return a.value - b.value;
     	},
   };
-
+  // Timeline object
+  var timelineTooltips = new vis.Timeline(document.getElementById('tooltips'),
+      items, options
+  );
   var timeline = new vis.Timeline(container);
   timeline.setOptions(options);
   timeline.setGroups(mygroups);
