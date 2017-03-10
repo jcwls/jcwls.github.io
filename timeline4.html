@@ -27,7 +27,7 @@
 <body>
 
 <p>
-  Josh Cowls - Visual Resume
+  Josh Cowls - Visual CV
 </p>
 <div id="visualization"></div>
 
@@ -36,27 +36,6 @@
   var groupCount = 3;
   var itemCount = 20;
 
-  // create a data set with groups
-  var names = ['John', 'Alston', 'Lee', 'Grant'];
-  var groups = new vis.DataSet();
-  for (var g = 0; g < groupCount; g++) {
-    groups.add({id: g, content: names[g]});
-  }
-
-  // create a dataset with items
-  var items = new vis.DataSet();
-  for (var i = 0; i < itemCount; i++) {
-    var start = now.clone().add(Math.random() * 200, 'hours');
-    var group = Math.floor(Math.random() * groupCount);
-    items.add({
-      id: i,
-      group: group,
-      content: 'item ' + i +
-          ' <span style="color:#97B0F8;">(' + names[group] + ')</span>',
-      start: start,
-      type: 'box'
-    });
-  }
   
   // my group dataset
   var mygroups = new vis.DataSet([
@@ -69,13 +48,13 @@
   content: "Professional Experience",
   value: 2
   },
-  {id:3,
-  content: "Leadership Experience",
-  value:3
-  },
   {id:4,
-  content: "Projects and Causes",
+  content: "Leadership Experience",
   value:4
+  },
+  {id:3,
+  content: "Projects and Causes",
+  value:3
   },
   {id:5,
   content: "Publications",
@@ -90,8 +69,7 @@
   
   
   var myitems = new vis.DataSet([
-{
-  id: 1,
+{id: 1,
   group: 1,
   content: 'University of Exeter',
   start: '2008-09-01',
@@ -106,7 +84,32 @@
   group: 1,
   content: 'Massachusetts Institute of Technology',
   start: '2015-09-01',
+  end: '2017-05-31'},
+  {id: 4, 
+  group: 2,
+  content: 'HyperStudio, MIT',
+  start: '2015-09-01',
   end: '2017-05-31'}
+  {id: 5,
+  group:2,
+  content: 'Oxford Internet Institute',
+  start: '2013-09-01',
+  end: '2015-08-31'},
+  {id: 6,
+  group: 2,
+  content: 'Obama for America',
+  start: '2012-01-01',
+  end: '2012-04-01'},
+  {id: 7,
+  group: 2,
+  content: 'Eproductive',
+  start: '2012-04-01',
+  end: '2012-10-01'},
+  {id: 8, 
+  group: 2,
+  content: 'Liberal Democrat Policy Unit',
+  start: '2011-07-01',
+  end: '2011-10-01'},
   ]);
   
 
