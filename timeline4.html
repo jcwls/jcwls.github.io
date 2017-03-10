@@ -78,7 +78,7 @@
   {id: 2,
   group: 1,
   content: 'University of Oxford',
-  start: '2012-09-01',
+  start: '2012-10-01',
   end: '2013-08-31'},
   {id: 3,
   group: 1,
@@ -118,6 +118,8 @@
   // create visualization
   var container = document.getElementById('visualization');
   var options = {
+    min: new Date(2006, 0, 1),
+    zoomMax: 1000 * 60 * 60 * 24 * 31 * 12 * 12,
     groupOrder: function (a, b){
     	return a.value - b.value;
     	},
