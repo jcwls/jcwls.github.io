@@ -30,7 +30,8 @@
       height: 300px;
     }
   </style>
-
+  <!-- for mobile devices like android and iphone -->
+  <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width" />
   <!-- note: moment.js must be loaded before vis.js, else vis.js uses its embedded version of moment.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
 
@@ -116,7 +117,12 @@ Icons can be clicked for more information
   start: '2015-09-01',
   end: '2017-05-31',
   className: "green"},
-  
+  {id: 9,
+  group: 1,
+  content: 'UVic (Study abroad)',
+  start: '2009-09-01',
+  end: '2009-12-15',
+  className: "red"},
   {id: 5,
   group:2,
   content: 'Oxford Internet Institute',
