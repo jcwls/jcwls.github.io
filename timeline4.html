@@ -463,6 +463,7 @@ Icons can be clicked for more information
   // create visualization
   var container = document.getElementById('visualization');
   var options = {
+   throttleRedraw: 10,
     min: new Date(2006, 0, 1),
     start: '2012-1-1',
     max: new Date(2017, 9, 1),
