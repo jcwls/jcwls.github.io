@@ -31,7 +31,7 @@
     }
   </style>
   <!-- for mobile devices like android and iphone -->
-  <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width" />
+  <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> />
   <!-- note: moment.js must be loaded before vis.js, else vis.js uses its embedded version of moment.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
 
@@ -463,7 +463,6 @@ Icons can be clicked for more information
   // create visualization
   var container = document.getElementById('visualization');
   var options = {
-   throttleRedraw: 10,
     min: new Date(2006, 0, 1),
     start: '2012-1-1',
     max: new Date(2017, 9, 1),
